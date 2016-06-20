@@ -1,0 +1,10 @@
+{
+    "sources":[
+        "src/Radix32Convert",
+        "src/Radix32Convert.Test"
+    ],
+    "projects":[
+        "src/Radix32Convert",
+        "src/Radix32Convert.Test"
+    ]
+}
