@@ -2,9 +2,9 @@ using System.Numerics;
 using System.Text;
 using System.Linq;
 using System.Collections.Generic;
-namespace Radix32Convert
+namespace Base32Convert
 {
-    public static class Radix32Converter
+    public static class Base32Converter
     {
         const string radixstr = "0123456789abcdefghijklmnopqrstuvwxyz";
         static readonly char[] radixchar = radixstr.ToCharArray();

@@ -3,7 +3,7 @@ using Xunit.Abstractions;
 using System.Numerics;
 using System.Linq;
 using System;
-namespace Radix32Convert.Test
+namespace Base32Convert.Test
 {
     public class TestConvert : IDisposable
     {
@@ -23,8 +23,8 @@ namespace Radix32Convert.Test
         {
             m_OutputHelper.WriteLine($"test value is {value}");
             var expected = new BigInteger(value);
-            var s = Radix32Converter.ConvertToString(expected);
-            var b = Radix32Converter.ConvertToInteger(s);
+            var s = Base32Converter.ConvertToString(expected);
+            var b = Base32Converter.ConvertToInteger(s);
             Assert.Equal(expected, b);
             m_OutputHelper.WriteLine($"convert result is {value} => {s}");
         }
@@ -40,8 +40,8 @@ namespace Radix32Convert.Test
             var bstr = string.Join("", b.Select(x => x.ToString("x2")));
             m_OutputHelper.WriteLine($"{bstr}");
             var expected = new BigInteger(b);
-            var s = Radix32Converter.ConvertToString(expected);
-            Assert.Equal(expected, Radix32Converter.ConvertToInteger(s));
+            var s = Base32Converter.ConvertToString(expected);
+            Assert.Equal(expected, Base32Converter.ConvertToInteger(s));
             m_OutputHelper.WriteLine($"convert result is {bstr} => {s}");
         }
         #region IDisposable Support

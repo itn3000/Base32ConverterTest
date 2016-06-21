@@ -1,10 +1,10 @@
 {
     "sources":[
-        "src/Radix32Convert",
-        "src/Radix32Convert.Test"
+        "src/Base32Convert",
+        "src/Base32Convert.Test"
     ],
     "projects":[
-        "src/Radix32Convert",
-        "src/Radix32Convert.Test"
+        "src/Base32Convert",
+        "src/Base32Convert.Test"
     ]
 }

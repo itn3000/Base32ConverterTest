@@ -9,8 +9,8 @@
         {
             "taskName": "build",
             "args": [ 
-                "${workspaceRoot}/src/Radix32Convert",
-                "${workspaceRoot}/src/Radix32Convert.Test"
+                "${workspaceRoot}/src/Base32Convert",
+                "${workspaceRoot}/src/Base32Convert.Test"
             ],
             "isBuildCommand": true,
             "showOutput": "silent",
@@ -19,8 +19,8 @@
         {
             "taskName": "restore",
             "args":[
-                "${workspaceRoot}/src/Radix32Convert",
-                "${workspaceRoot}/src/Radix32Convert.Test"
+                "${workspaceRoot}/src/Base32Convert",
+                "${workspaceRoot}/src/Base32Convert.Test"
             ],
             "isBuildCommand": false,
             "showOutput": "silent",
@@ -29,7 +29,7 @@
         {
             "taskName": "test",
             "args":[
-                "${workspaceRoot}/src/Radix32Convert.Test",
+                "${workspaceRoot}/src/Base32Convert.Test",
                 "-verbose",
                 "-xml",
                 "${workspaceRoot}/TestResults/result.xml"
