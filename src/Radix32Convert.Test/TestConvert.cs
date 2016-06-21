@@ -26,7 +26,7 @@ namespace Radix32Convert.Test
             var s = Radix32Converter.ConvertToString(expected);
             var b = Radix32Converter.ConvertToInteger(s);
             Assert.Equal(expected, b);
-            Console.WriteLine($"convert result is {value} => {s}");
+            m_OutputHelper.WriteLine($"convert result is {value} => {s}");
         }
         [Fact]
         public void ConvertBinaryTest()
@@ -36,11 +36,11 @@ namespace Radix32Convert.Test
                 .Concat(new byte[1] { 0 }).ToArray()
                 ;
             var bstr = string.Join("", b.Select(x => x.ToString("x2")));
-            Console.WriteLine($"{bstr}");
+            m_OutputHelper.WriteLine($"{bstr}");
             var expected = new BigInteger(b);
             var s = Radix32Converter.ConvertToString(expected);
             Assert.Equal(expected, Radix32Converter.ConvertToInteger(s));
-            Console.WriteLine($"convert result is {bstr} => {s}");
+            m_OutputHelper.WriteLine($"convert result is {bstr} => {s}");
         }
 
         #region IDisposable Support
@@ -53,7 +53,7 @@ namespace Radix32Convert.Test
                 if (disposing)
                 {
                     // TODO: dispose managed state (managed objects).
-                    Console.WriteLine("disposing");
+                    m_OutputHelper.WriteLine("disposing");
                 }
 
                 // TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.

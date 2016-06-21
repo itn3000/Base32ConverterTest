@@ -1,0 +1,41 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "0.1.0",
+    "command": "dotnet",
+    "isShellCommand": true,
+    "args": [],
+    "tasks": [
+        {
+            "taskName": "build",
+            "args": [ 
+                "${workspaceRoot}/src/Radix32Convert",
+                "${workspaceRoot}/src/Radix32Convert.Test"
+            ],
+            "isBuildCommand": true,
+            "showOutput": "silent",
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "taskName": "restore",
+            "args":[
+                "${workspaceRoot}/src/Radix32Convert",
+                "${workspaceRoot}/src/Radix32Convert.Test"
+            ],
+            "isBuildCommand": false,
+            "showOutput": "silent",
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "taskName": "test",
+            "args":[
+                "${workspaceRoot}/src/Radix32Convert.Test",
+                "-verbose",
+                "-xml",
+                "${workspaceRoot}/TestResults/result.xml"
+            ],
+            "isBuildCommand": false,
+            "showOutput": "always"
+        }
+    ]
+}
