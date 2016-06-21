@@ -28,11 +28,13 @@ namespace Radix32Convert.Test
             Assert.Equal(expected, b);
             m_OutputHelper.WriteLine($"convert result is {value} => {s}");
         }
-        [Fact]
-        public void ConvertBinaryTest()
+        [Theory]
+        [InlineData(128/8)]
+        [InlineData(192/8)]
+        public void ConvertBinaryTest(int datalength)
         {
-            var b = System.Security.Cryptography.MD5.Create()
-                .ComputeHash(Enumerable.Range(0, 1000).Select(i => (byte)1).ToArray())
+            var rnd = new Random();
+            var b = Enumerable.Range(0, datalength).Select(i => (byte)rnd.Next(1,254))
                 .Concat(new byte[1] { 0 }).ToArray()
                 ;
             var bstr = string.Join("", b.Select(x => x.ToString("x2")));
@@ -42,7 +44,6 @@ namespace Radix32Convert.Test
             Assert.Equal(expected, Radix32Converter.ConvertToInteger(s));
             m_OutputHelper.WriteLine($"convert result is {bstr} => {s}");
         }
-
         #region IDisposable Support
         private bool disposedValue = false; // To detect redundant calls
 
